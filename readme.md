@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-FrontendMedialibrary is a trait that makes your the media, on your Laravel models that use Spatie Medialibrary, more easily accessible in frontend frameworks. Take a look at [contributing.md](contributing.md) to see a to do list.
+FrontendMedialibrary is a trait that makes the media, on your Laravel models that use Spatie Medialibrary, more easily accessible in frontend frameworks. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -20,13 +20,22 @@ $ composer require gterrusa/frontendmedialibrary
 Set up your Model
 
 ```
-class User extends Model implements HasMedia // requires implements HasMedia
+/**
+ * Model must be using Spatie Medialibrary
+ */
+
+class User extends Model implements HasMedia
 {
-    // requires InteractsWithMedia
     use InteractsWithMedia, HasFrontendMedia;
+    
+    // If you would like the frontendMedia attribute included with your model automatically
+    protected $appends = ['frontendMedia'];
+    
     
     /**
      * Spatie medialibrary media collections
+     * any media collections can be set up here
+     * this is just an example.
      */
     public function registerMediaCollections(): void
     {
@@ -37,6 +46,8 @@ class User extends Model implements HasMedia // requires implements HasMedia
 
     /**
      * Spatie medialibrary media conversions
+     * any media conversions can be set up here
+     * this is just an example
      */
     public function registerMediaConversions(Media $media = null): void
     {
