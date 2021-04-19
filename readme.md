@@ -66,52 +66,56 @@ Example Result:
 
 ```
 >>> $user->frontendMedia;
-=> [
-     "avatar" => [
-       [
-         "src" => "http://frontend-medialibrary.local/storage/1/41301408.jpeg",
-         "conversions" => [
-           "thumb" => "http://frontend-medialibrary.local/storage/1/conversions/41301408-thumb.jpg",
-           "optimized" => "http://frontend-medialibrary.local/storage/1/conversions/41301408-optimized.jpg",
-         ],
-         "custom_properties" => [
-           "generated_conversions" => [
-             "thumb" => true,
-             "optimized" => true,
+=> Illuminate\Support\Collection {#4382
+     all: [
+       "avatar" => Illuminate\Support\Collection {#4439
+         all: [
+           [
+             "src" => "http://frontend-medialibrary.local/storage/1/41301408.jpeg",
+             "conversions" => Illuminate\Support\Collection {#4425
+               all: [
+                 "thumb" => "http://frontend-medialibrary.local/storage/1/conversions/41301408-thumb.jpg",
+                 "optimized" => "http://frontend-medialibrary.local/storage/1/conversions/41301408-optimized.jpg",
+               ],
+             },
+             "custom_properties" => Illuminate\Support\Collection {#4384
+               all: [
+                 "alt" => "my alt tag",
+               ],
+             },
            ],
-           "alt" => "alt tag",
          ],
-       ],
+       },
+       "user_gallery" => Illuminate\Support\Collection {#4469
+         all: [
+           [
+             "src" => "http://frontend-medialibrary.local/storage/2/49268400_10155665639226152_4845558111659884544_n.jpg",
+             "conversions" => Illuminate\Support\Collection {#4443
+               all: [
+                 "thumb" => "http://frontend-medialibrary.local/storage/2/conversions/49268400_10155665639226152_4845558111659884544_n-thumb.jpg",
+                 "optimized" => "http://frontend-medialibrary.local/storage/2/conversions/49268400_10155665639226152_4845558111659884544_n-optimized.jpg",
+               ],
+             },
+             "custom_properties" => Illuminate\Support\Collection {#4456
+               all: [],
+             },
+           ],
+           [
+             "src" => "http://frontend-medialibrary.local/storage/3/68544499_10156079858431152_5954628979427115008_n.jpg",
+             "conversions" => Illuminate\Support\Collection {#4444
+               all: [
+                 "thumb" => "http://frontend-medialibrary.local/storage/3/conversions/68544499_10156079858431152_5954628979427115008_n-thumb.jpg",
+                 "optimized" => "http://frontend-medialibrary.local/storage/3/conversions/68544499_10156079858431152_5954628979427115008_n-optimized.jpg",
+               ],
+             },
+             "custom_properties" => Illuminate\Support\Collection {#4470
+               all: [],
+             },
+           ],
+         ],
+       },
      ],
-     "user_gallery" => [
-       [
-         "src" => "http://frontend-medialibrary.local/storage/2/49268400_10155665639226152_4845558111659884544_n.jpg",
-         "conversions" => [
-           "thumb" => "http://frontend-medialibrary.local/storage/2/conversions/49268400_10155665639226152_4845558111659884544_n-thumb.jpg",
-           "optimized" => "http://frontend-medialibrary.local/storage/2/conversions/49268400_10155665639226152_4845558111659884544_n-optimized.jpg",
-         ],
-         "custom_properties" => [
-           "generated_conversions" => [
-             "thumb" => true,
-             "optimized" => true,
-           ],
-         ],
-       ],
-       [
-         "src" => "http://frontend-medialibrary.local/storage/3/68544499_10156079858431152_5954628979427115008_n.jpg",
-         "conversions" => [
-           "thumb" => "http://frontend-medialibrary.local/storage/3/conversions/68544499_10156079858431152_5954628979427115008_n-thumb.jpg",
-           "optimized" => "http://frontend-medialibrary.local/storage/3/conversions/68544499_10156079858431152_5954628979427115008_n-optimized.jpg",
-         ],
-         "custom_properties" => [
-           "generated_conversions" => [
-             "thumb" => true,
-             "optimized" => true,
-           ],
-         ],
-       ],
-     ],
-   ]
+   }
 ```
 
 ## Change log
