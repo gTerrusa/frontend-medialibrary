@@ -39,9 +39,11 @@ trait HasFrontendMedia
                 return [
                     'src' => $m->getFullUrl() ?? '',
                     'conversions' => collect($conversions),
-                    'custom_properties' => collect($m->custom_properties ?? [])->except('generated_conversions')
+                    'custom_properties' => collect($m->custom_properties ?? [])->except('generated_conversions'),
+                    'order_column' => $m->order_column
                 ];
-            });
+            })
+            ->sortBy('order_column');
         });
     }
 }
