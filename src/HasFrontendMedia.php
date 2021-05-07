@@ -43,7 +43,8 @@ trait HasFrontendMedia
                     'order_column' => $m->order_column
                 ];
             })
-            ->sortBy('order_column');
+            ->sortBy('order_column')
+            ->values();
         });
     }
 }
