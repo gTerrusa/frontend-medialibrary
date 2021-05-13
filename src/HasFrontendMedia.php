@@ -29,8 +29,10 @@ trait HasFrontendMedia
             return $media->map(function (Media $m) {
                 $conversions = [];
 
-                if (isset($m->custom_properties['generated_conversions'])) {
-                    $conversionNames = array_keys($m->custom_properties['generated_conversions']);
+                if (isset($m->generated_conversions) || isset($m->custom_properties['generated_conversions'])) {
+                    $conversionNames = isset($m->generated_conversions)
+                        ? array_keys($m->generated_conversions)
+                        : array_keys($m->custom_properties['generated_conversions']);
                     foreach ($conversionNames as $name) {
                         $conversions[$name] = $m->getFullUrl($name) ?? '';
                     }
