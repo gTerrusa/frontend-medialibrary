@@ -12,7 +12,6 @@
     "homepage": "https://github.com/gterrusa/frontendmedialibrary",
     "keywords": ["Laravel", "FrontendMedialibrary"],
     "require": {
-        "illuminate/support": "^7",
         "spatie/laravel-medialibrary": "^7"
     },
     "require-dev": {
